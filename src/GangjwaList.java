@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Vector;
 
-
 public class GangjwaList {
 
 	GwamokList gwamokList;
@@ -11,11 +10,12 @@ public class GangjwaList {
 	HaksaengList haksaengList;
 	Vector<Score> scoreVector;
 	Vector<Gangjwa> gangjwaVector;
-	String s[]= new String[4];
-	int ss[]= new int[4];
+	String s[] = new String[4];
+	int ss[] = new int[4];
 
 	public GangjwaList() {
 		this.scoreVector = new Vector<Score>();
+		this.gangjwaVector = new Vector<Gangjwa>();
 	}
 
 	public void readFromFile() {
@@ -24,10 +24,14 @@ public class GangjwaList {
 
 		try {
 			scanner = new Scanner(file);
-
+			Gangjwa gangjwa = new Gangjwa();
 			int i = 0;
 			while (scanner.hasNext()) {
+				if (i == 0) {
 
+					gangjwa.readFromFile(scanner);
+					this.gangjwaVector.add(gangjwa);
+				}
 				Score score = new Score();
 
 				score.readFromFile(scanner, i);
@@ -36,7 +40,7 @@ public class GangjwaList {
 
 			}
 			scanner.close();
-
+			
 		}
 
 		catch (FileNotFoundException e) {
@@ -46,43 +50,41 @@ public class GangjwaList {
 	}
 
 	public void printGangjwaInfo() throws Exception {
+		Gangjwa gangjwa1 = new Gangjwa();
 
-		String gwamokName = this.gwamokList.getGwamokName(this.gwamokID);
-		if (gwamokName != null) {
-
-			System.out.println(this.gwamokID + " " + gwamokName + " "+s[1] +" "+ ss[2]+" "+ ss[3]);
-			for (Score score : this.scoreVector) {
-				score.writeToFile();
-			}
-
-		} else {
-			throw new Exception("과목이 존재하지 않습니다. :");
+		 String gwamokName = this.gwamokList.getGwamokName(gangjwa1.getGwamokID());
+	
+		for (Gangjwa gangjwa : this.gangjwaVector) {
+			gangjwa.writeToFile();
 		}
+
+		;
+		// System.out.println(this.gwamokID + " " + gwamokName + " " + s[1] + " " +
+		// ss[2] + " " + ss[3]);
+		for (Score score : this.scoreVector) {
+			score.writeToFile();
+		}
+
+		// } else {
+		// throw new Exception("과목이 존재하지 않습니다. :");
+		// }
 	}
 
-	public void associate(GwamokList gangjwaList, HaksaengList haksaengList) {
-		this.gwamokList = gangjwaList;
+	public void associate(GwamokList gwamokList, HaksaengList haksaengList) {
+		this.gwamokList = gwamokList;
 		this.haksaengList = haksaengList;
 
 	}
-	
+
 	public class Score {
 		private int haksaengID;
 		private int kimal;
-		
+
 		public int getScore() {
 			return kimal;
 		}
 
 		public void readFromFile(Scanner scanner, int i) {
-
-			if (i == 0) {
-				gwamokID = scanner.nextInt();
-				s[1]=scanner.next();
-				ss[2]=scanner.nextInt();
-				ss[3]=scanner.nextInt();
-			}
-			
 
 			this.haksaengID = scanner.nextInt();
 			this.kimal = scanner.nextInt();

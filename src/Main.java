@@ -12,19 +12,19 @@ public class Main {
 
 			GwamokList gwamokList = new GwamokList();
 			gwamokList.readFromFile();
-
+//			Gangjwa gangjwa = new Gangjwa();
+//			gangjwa.associate(gwamokList, haksaengList);
 			GangjwaList gangjwaList = new GangjwaList();
 			gangjwaList.readFromFile();
 			gangjwaList.associate(gwamokList, haksaengList);
 			gangjwaList.printGangjwaInfo();
-			
-			
-//			haksaengList.printHaksaengInfo();
-//			haksaengList.associate(gangjwaList);
+
+
+			// haksaengList.printHaksaengInfo();
+			// haksaengList.associate(gangjwaList);
 
 			// 1. print ganjwa info
-			// 2. print haksaeng info 
-			
+			// 2. print haksaeng info
 
 		} catch (FileNotFoundException e) {
 

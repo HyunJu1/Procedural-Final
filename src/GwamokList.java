@@ -12,14 +12,6 @@ public class GwamokList {
 
 	}
 
-	public String getGwamokName(int gwamokID) {
-		for (Gwamok gwamok : this.gwamokVector) {
-			if (gwamok.getID() == gwamokID) {
-				return gwamok.getName();
-			}
-		}
-		return null;
-	}
 
 	public void readFromFile() throws FileNotFoundException {// ½É°¢ÇÑ --> throws FileNotFoundException 
 		File file = new File("gwamok.txt");
@@ -36,6 +28,14 @@ public class GwamokList {
 
 			e.printStackTrace();
 		}
+	}
+	public String getGwamokName(int gwamokID) {
+		for (Gwamok gwamok : this.gwamokVector) {
+			if (gwamok.getID() == gwamokID) {
+				return gwamok.getName();
+			}
+		}
+		return null;
 	}
 
 	public void writeToFile() {
