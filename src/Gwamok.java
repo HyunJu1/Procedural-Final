@@ -9,17 +9,6 @@ public class Gwamok {
 		public String name;
 		
 
-		public void readFromFile(Scanner scanner) {
-			this.id = scanner.nextInt();
-			this.name = scanner.next();
-	
-		}
-
-		public void writeToFile() {
-			System.out.println(this.id+" "+this.name);
-			
-		}
-
 		public int getID() {
 			return id; 
 		}
@@ -34,6 +23,18 @@ public class Gwamok {
 
 			return name;
 		}
+
+		public void readFromFile(Scanner scanner) {
+			this.id = scanner.nextInt();
+			this.name = scanner.next();
+	
+		}
+
+		public void writeToFile() {
+			System.out.println(this.id+" "+this.name);
+			
+		}
+
 		
 
 	}

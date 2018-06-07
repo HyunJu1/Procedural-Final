@@ -1,27 +1,21 @@
 import java.util.Scanner;
 
 public class Gangjwa {
-	GwamokList gwamokList =new GwamokList();
+	GwamokList gwamokList1 = new GwamokList();
 	HaksaengList haksaengList;
-	public int gwamokID;
+	public static int gwamokID;
+	public int gangjwaID;
 	public String name;
 	public int year;
 	public int hakgi;
 
 	public void readFromFile(Scanner scanner) {
 		this.gwamokID = scanner.nextInt();
+		this.gangjwaID = scanner.nextInt();
 		this.name = scanner.next();
 		this.year = scanner.nextInt();
 		this.hakgi = scanner.nextInt();
 
-	}
-
-	public int getGwamokID() {
-		return gwamokID;
-	}
-
-	public void setGwamokID(int gwamokID) {
-		this.gwamokID = gwamokID;
 	}
 
 	public String getName() {
@@ -48,21 +42,14 @@ public class Gangjwa {
 		this.year = year;
 	}
 
-//	public void associate(GwamokList gwamokList, HaksaengList haksaengList) {
-//		this.gwamokList = gwamokList;
-//		this.haksaengList = haksaengList;
-//	}
+	public void associate(GwamokList gwamokList, HaksaengList haksaengList) {
+		this.gwamokList1 = gwamokList;
+		this.haksaengList = haksaengList;
+	}
 
 	public void writeToFile() throws Exception {
-		System.out.println(gwamokID);
-		String gwamokName1 = this.gwamokList.getGwamokName(this.gwamokID);
-		System.out.println(gwamokName1);
-		//if (gwamokName1 != null) {
-			System.out.println(
-					this.gwamokID + " / "+   " / " + this.name + " / " + this.year + " / " + this.hakgi);
-//		} else {
-//			throw new Exception("과목이 존재하지 않습니다. :");
-//		}
+
+		System.out.println(" / " + this.gangjwaID + " / " + this.name + " / " + this.year + " / " + this.hakgi);
 
 	}
 

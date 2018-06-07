@@ -12,14 +12,17 @@ public class Main {
 
 			GwamokList gwamokList = new GwamokList();
 			gwamokList.readFromFile();
-//			Gangjwa gangjwa = new Gangjwa();
-//			gangjwa.associate(gwamokList, haksaengList);
+			gwamokList.writeToFile();
+			
+			System.out.println();
 			GangjwaList gangjwaList = new GangjwaList();
 			gangjwaList.readFromFile();
 			gangjwaList.associate(gwamokList, haksaengList);
 			gangjwaList.printGangjwaInfo();
 
-
+//
+//			Gangjwa gangjwa = new Gangjwa();
+//			gangjwa.associate(gwamokList, haksaengList);
 			// haksaengList.printHaksaengInfo();
 			// haksaengList.associate(gangjwaList);
 
