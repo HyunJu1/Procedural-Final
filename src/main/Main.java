@@ -1,6 +1,10 @@
+package main;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import Haksaeng.HaksaengList;
+import gangjwa.GangjwaList;
 
 public class Main {
 	public static void main(String[] args) {
@@ -12,13 +16,13 @@ public class Main {
 
 			GwamokList gwamokList = new GwamokList();
 			gwamokList.readFromFile();
-			gwamokList.writeToFile();
+			gwamokList.printInfo();
 			
 			System.out.println();
 			GangjwaList gangjwaList = new GangjwaList();
 			gangjwaList.readFromFile();
 			gangjwaList.associate(gwamokList, haksaengList);
-			gangjwaList.printGangjwaInfo();
+			gangjwaList.printInfo();
 
 //
 //			Gangjwa gangjwa = new Gangjwa();

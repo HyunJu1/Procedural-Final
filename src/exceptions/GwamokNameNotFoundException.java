@@ -1,3 +1,4 @@
+package exceptions;
 
 public class GwamokNameNotFoundException extends Exception {
 	GwamokNameNotFoundException(String string) {

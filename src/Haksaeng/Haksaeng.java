@@ -1,3 +1,5 @@
+package Haksaeng;
+
 import java.util.Scanner;
 
 public class Haksaeng {

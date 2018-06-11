@@ -1,4 +1,9 @@
+package gangjwa;
+
 import java.util.Scanner;
+
+import Haksaeng.HaksaengList;
+import main.GwamokList;
 
 public class Gangjwa {
 	GwamokList gwamokList1 = new GwamokList();

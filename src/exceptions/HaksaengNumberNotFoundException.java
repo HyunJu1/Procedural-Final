@@ -1,6 +1,7 @@
+package exceptions;
 
 public class HaksaengNumberNotFoundException extends Exception {
-	HaksaengNumberNotFoundException (String string) {
+	public HaksaengNumberNotFoundException (String string) {
 		super(string);
 		// System.out.println(string);
 	}

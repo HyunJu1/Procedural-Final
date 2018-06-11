@@ -1,3 +1,5 @@
+package main;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -39,7 +41,7 @@ public class GwamokList {
 		return null;
 	}
 
-	public void writeToFile() {
+	public void printInfo() {
 		for (Gwamok gwamok : this.gwamokVector) {
 			gwamok.writeToFile();
 		}

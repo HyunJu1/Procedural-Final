@@ -1,7 +1,13 @@
+package gangjwa;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Vector;
+
+import Haksaeng.HaksaengList;
+import exceptions.HaksaengNumberNotFoundException;
+import main.GwamokList;
 
 public class GangjwaList {
 
@@ -50,7 +56,7 @@ public class GangjwaList {
 		}
 	}
 
-	public void printGangjwaInfo() throws Exception {
+	public void printInfo() throws Exception {
 		String gwamokName1 = this.gwamokList.getGwamokName(Gangjwa.gwamokID);
 
 		if (gwamokName1 != null) {
