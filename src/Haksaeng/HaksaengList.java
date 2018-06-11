@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Vector;
 
+import gangjwa.GangjwaList;
+
 public class HaksaengList {
 	// components
 	Vector<Haksaeng> haksaengVector;
+	private GangjwaList gangjwaList;
 
 	public HaksaengList() {
 		this.haksaengVector = new Vector<Haksaeng>();
@@ -20,6 +23,7 @@ public class HaksaengList {
 			Scanner sc = new Scanner(file);
 			while (sc.hasNext()) {
 				Haksaeng haksaeng = new Haksaeng();
+				haksaeng.associate(this.gangjwaList);
 				haksaeng.readFromFile(sc);
 				this.haksaengVector.add(haksaeng);
 	
@@ -53,5 +57,15 @@ public class HaksaengList {
 			
 		}
 		return null;
+	}
+
+	public void associate(GangjwaList gangjwaList) {
+		this.gangjwaList=gangjwaList;
+		
+	}
+
+	public void printHaksaengInfo() {
+		// TODO Auto-generated method stub
+		
 	}
 }

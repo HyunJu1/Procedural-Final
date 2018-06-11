@@ -20,15 +20,15 @@ public class Main {
 			
 			System.out.println();
 			GangjwaList gangjwaList = new GangjwaList();
-			gangjwaList.readFromFile();
 			gangjwaList.associate(gwamokList, haksaengList);
-			gangjwaList.printInfo();
+			gangjwaList.readFromFile();
+			
+//			gangjwaList.printInfo();
 
-//
-//			Gangjwa gangjwa = new Gangjwa();
-//			gangjwa.associate(gwamokList, haksaengList);
-			// haksaengList.printHaksaengInfo();
-			// haksaengList.associate(gangjwaList);
+
+			 haksaengList.associate(gangjwaList);
+			 haksaengList.printHaksaengInfo();
+			
 
 			// 1. print ganjwa info
 			// 2. print haksaeng info

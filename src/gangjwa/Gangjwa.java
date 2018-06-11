@@ -54,8 +54,10 @@ public class Gangjwa {
 
 	public void writeToFile() throws Exception {
 
-		System.out.println(" / " + this.gangjwaID + " / " + this.name + " / " + this.year + " / " + this.hakgi);
+		System.out.print( this.gangjwaID + " / " + this.name + " / " + this.year + " / " + this.hakgi+" / ");
 
 	}
+	
+
 
 }
