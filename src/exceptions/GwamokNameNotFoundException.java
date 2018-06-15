@@ -1,8 +1,10 @@
 package exceptions;
 
 public class GwamokNameNotFoundException extends Exception {
-	GwamokNameNotFoundException(String string) {
+	   private static final long serialVersionUID = 1L;
+
+	   	GwamokNameNotFoundException(String string) {
 		super(string);
-//		System.out.println(string);
+
 	}
 }

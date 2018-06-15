@@ -69,7 +69,7 @@ public class GangjwaList {
 
 		catch (FileNotFoundException e) {
 
-			e.printStackTrace();
+			throw new Exception("과목이 존재하지 않습니다. :");
 		}
 	}
 
@@ -117,13 +117,13 @@ public class GangjwaList {
 		}
 
 		public void writeToFile() throws Exception {
-			if (kimal > 90) {
+			if (kimal >= 85) {
 				grade = 'A';
-			} else if (kimal > 80) {
+			} else if (kimal >= 70) {
 				grade = 'B';
-			} else if (kimal > 70) {
+			} else if (kimal >= 50) {
 				grade = 'C';
-			} else if (kimal > 70) {
+			} else if (kimal >=20) {
 				grade = 'D';
 			} else {
 				grade = 'F';

@@ -15,7 +15,7 @@ public class GwamokList {
 	}
 
 
-	public void readFromFile() throws FileNotFoundException {// 심각한 --> throws FileNotFoundException 
+	public void readFromFile() throws Exception {// 심각한 --> throws FileNotFoundException 
 		File file = new File("data1/gaumok.txt");
 		try {
 			Scanner sc = new Scanner(file);

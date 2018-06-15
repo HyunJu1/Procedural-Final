@@ -33,7 +33,9 @@ public class HaksaengList {
 		} catch (FileNotFoundException e) {
 
 			e.printStackTrace();
+		
 		}
+		
 	}
 
 
@@ -59,6 +61,7 @@ public class HaksaengList {
 		System.out.println("*********HaksaengList*********");
 		for(Haksaeng haksaeng : this.haksaengVector) {
 			haksaeng.writeToFile();
+
 		}
 	}
 }
