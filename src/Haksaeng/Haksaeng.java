@@ -9,8 +9,8 @@ import main.Sungjeok;
 public class Haksaeng {
 	GangjwaList gangjwaList;
 	private int id;
-	//학생테이블에 강좌아이디도 집어넣어야한다. 
-	
+	// 학생테이블에 강좌아이디도 집어넣어야한다.
+
 	public int getID() {
 		return id;
 	}
@@ -30,18 +30,18 @@ public class Haksaeng {
 	private String name;
 
 	public void readFromFile(Scanner sc) {
-		this.id= sc.nextInt();
-		this.name= sc.next();
-//		Vector <Sungjeok> seongjeokList=this.gangjwaList.getSeongjeok(this.id);
+		this.id = sc.nextInt();
+		this.name = sc.next();
+		// Vector <Sungjeok> seongjeokList=this.gangjwaList.getSeongjeok(this.id);
 
 	}
 
 	public void writeToFile() {
-		System.out.println(this.id+" "+ this.name);
+		System.out.println(this.id + " " + this.name);
 	}
 
 	public void associate(GangjwaList gangjwaList) {
+		this.gangjwaList = gangjwaList;
 
-		
 	}
 }

@@ -16,7 +16,7 @@ public class GwamokList {
 
 
 	public void readFromFile() throws FileNotFoundException {// ½É°¢ÇÑ --> throws FileNotFoundException 
-		File file = new File("gwamok.txt");
+		File file = new File("data1/gaumok.txt");
 		try {
 			Scanner sc = new Scanner(file);
 			while (sc.hasNext()) {

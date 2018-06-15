@@ -16,10 +16,11 @@ public class Gangjwa {
 
 	public void readFromFile(Scanner scanner) {
 		this.gwamokID = scanner.nextInt();
-		this.gangjwaID = scanner.nextInt();
+
 		this.name = scanner.next();
 		this.year = scanner.nextInt();
 		this.hakgi = scanner.nextInt();
+		this.gangjwaID = scanner.nextInt();
 
 	}
 

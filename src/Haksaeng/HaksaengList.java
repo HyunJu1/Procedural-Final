@@ -11,6 +11,7 @@ public class HaksaengList {
 	// components
 	Vector<Haksaeng> haksaengVector;
 	private GangjwaList gangjwaList;
+	
 
 	public HaksaengList() {
 		this.haksaengVector = new Vector<Haksaeng>();
@@ -18,7 +19,7 @@ public class HaksaengList {
 	}
 
 	public void readFromFile() {
-		File file = new File("haksaeng.txt");
+		File file = new File("data1/haksaeng.txt");
 		try {
 			Scanner sc = new Scanner(file);
 			while (sc.hasNext()) {
@@ -35,18 +36,7 @@ public class HaksaengList {
 		}
 	}
 
-	public void writeToFile() {
-		Object[] objs = haksaengVector.toArray();
 
-		Arrays.sort(objs);
-
-		for (int i=0; i < objs.length; i++){
-
-		       System.out.println(objs[i] + " ");
-
-		}
-
-	}
 
 	public String getHaksaengName(int haksaengID) {
 		//강좌리스트의 getGangjwaName참고하기
@@ -65,7 +55,10 @@ public class HaksaengList {
 	}
 
 	public void printHaksaengInfo() {
-		// TODO Auto-generated method stub
-		
+		System.out.println();
+		System.out.println("*********HaksaengList*********");
+		for(Haksaeng haksaeng : this.haksaengVector) {
+			haksaeng.writeToFile();
+		}
 	}
 }

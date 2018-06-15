@@ -25,7 +25,7 @@ public class GangjwaList {
 	}
 
 	public void readFromFile() throws Exception {
-		File file = new File("gangjwaList.txt");
+		File file = new File("data1/gangjwaList.txt");
 		File file2;
 		Scanner scanner;
 		Scanner scanner2;
@@ -43,7 +43,7 @@ public class GangjwaList {
 			
 				while (scanner2.hasNext()) {
 
-					if (i == 0 || i==4 || i==8) {
+					if (i == 0 || i==10 || i==20 || i==30) {
 						
 						// scanner2=new Scanner(name);
 						Gangjwa gangjwa = new Gangjwa();
@@ -113,6 +113,7 @@ public class GangjwaList {
 
 			this.haksaengID = scanner.nextInt();
 			this.kimal = scanner.nextInt();
+	
 		}
 
 		public void writeToFile() throws Exception {
