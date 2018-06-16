@@ -4,12 +4,13 @@ import java.util.Scanner;
 import java.util.Vector;
 
 import gangjwa.GangjwaList;
+import main.GwamokList;
 import main.Sungjeok;
 
 public class Haksaeng {
 	GangjwaList gangjwaList;
 	private int id;
-	// 학생테이블에 강좌아이디도 집어넣어야한다.
+	private String name;
 
 	public int getID() {
 		return id;
@@ -27,8 +28,6 @@ public class Haksaeng {
 		this.name = name;
 	}
 
-	private String name;
-
 	public void readFromFile(Scanner sc) {
 		this.id = sc.nextInt();
 		this.name = sc.next();
@@ -37,7 +36,14 @@ public class Haksaeng {
 	}
 
 	public void writeToFile() {
-		System.out.println(this.id + " " + this.name);
+		System.out.print(this.id + " " + this.name +" : ");
+		GwamokList gwamokList = new GwamokList();
+		System.out.println(GangjwaList.map.get(this.id+1)[0]);
+		System.out.println( "강좌 아이디 - " +GangjwaList.map.get(this.id)[0] + " 과목 아이디 - " + GangjwaList.map.get(this.id)[1] + " 점수 - "
+				+ GangjwaList.map.get(this.id)[2] + "  성적- " + GangjwaList.map.get(this.id)[3]);
+//		System.out.println(GangjwaList.map.get(this.id)[4] + " - " + GangjwaList.map.get(this.id)[5] + " - "
+//				+ GangjwaList.map.get(this.id)[6] + " - " + GangjwaList.map.get(this.id)[7]);
+
 	}
 
 	public void associate(GangjwaList gangjwaList) {

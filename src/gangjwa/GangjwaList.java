@@ -2,26 +2,39 @@ package gangjwa;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Vector;
 
 import Haksaeng.HaksaengList;
 import exceptions.HaksaengNumberNotFoundException;
+import main.Gwamok;
 import main.GwamokList;
 import main.Sungjeok;
 
 public class GangjwaList {
+	public static Map<Integer, String[]> map = new HashMap<>();
+	public static List list = new ArrayList();
 
 	GwamokList gwamokList;
 	HaksaengList haksaengList;
 	Vector<Score> scoreVector;
 	Vector<Gangjwa> gangjwaVector;
+
+	public static ArrayList<Integer> kimal1 = new ArrayList<Integer>();
+	public static ArrayList<String> grade1 = new ArrayList<String>();
+//	public static ArrayList<String,String,String,String> arr1 = new ArrayList<String[]>();
+
 	String s[] = new String[4];
 	int ss[] = new int[4];
 
 	public GangjwaList() {
 		this.scoreVector = new Vector<Score>();
 		this.gangjwaVector = new Vector<Gangjwa>();
+	
 	}
 
 	public void readFromFile() throws Exception {
@@ -55,7 +68,7 @@ public class GangjwaList {
 					}
 					Score score = new Score();
 
-					score.readFromFile(scanner2, i);
+					score.readFromFile(scanner2);
 					i++;
 					this.scoreVector.add(score);
 
@@ -103,32 +116,46 @@ public class GangjwaList {
 	public class Score {
 		private int haksaengID;
 		private int kimal;
-		private char grade;
+		private String grade;
 
 		public int getScore() {
 			return kimal;
 		}
 
-		public void readFromFile(Scanner scanner, int i) {
-
+		public void readFromFile(Scanner scanner) {
+	
 			this.haksaengID = scanner.nextInt();
 			this.kimal = scanner.nextInt();
-
+			if (kimal >= 85) {
+				grade = "A";
+			} else if (kimal >= 70) {
+				grade = "B";
+			} else if (kimal >= 50) {
+				grade = "C";
+			} else if (kimal >= 20) {
+				grade = "D";
+			} else {
+				grade = "F";
+			}
+			kimal1.add(this.kimal);
+			grade1.add(this.grade);
+//			for(int i=0; i<kimal1.size();i++) {
+//				System.out.println(kimal1.get(i));
+//			}
+//			String arr[];
+//			for( int i=1; i<4;i++) {
+//				arr1.add( Integer.toString(Gwamok.gangjwaID1.get(0)), Integer.toString(Gwamok.gwamokID1.get(0)),
+//						Integer.toString(kimal1.get(haksaengID*i)), grade1.get(haksaengID*i));
+//			}
+			String arr1[] = { Integer.toString(Gwamok.gangjwaID1.get(2)), Integer.toString(Gwamok.gwamokID1.get(2)),
+					Integer.toString(this.kimal), (this.grade) };
+			String arr[] = { Integer.toString(Gwamok.gangjwaID1.get(3)), Integer.toString(Gwamok.gwamokID1.get(0)),
+					Integer.toString(this.kimal), (this.grade) };
+			map.put(haksaengID+1, arr1);
+			map.put(haksaengID, arr);
 		}
 
 		public void writeToFile() throws Exception {
-			if (kimal >= 85) {
-				grade = 'A';
-			} else if (kimal >= 70) {
-				grade = 'B';
-			} else if (kimal >= 50) {
-				grade = 'C';
-			} else if (kimal >= 20) {
-				grade = 'D';
-			} else {
-				grade = 'F';
-			}
-
 			String haksaengName = haksaengList.getHaksaengName(this.haksaengID);
 			if (haksaengName != null) {
 				System.out.println(haksaengName + " - " + getScore() + " - " + grade);
@@ -140,12 +167,6 @@ public class GangjwaList {
 		}
 	}
 
-	public Vector<Sungjeok> getSeongjeok(int id) {
-		Vector<Sungjeok> sungjeokList;
-		for (Gangjwa ganjwa : this.gangjwaVector) {
 
-		}
-		return null;
-	}
 
 }

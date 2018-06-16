@@ -31,7 +31,7 @@ public class GwamokList {
 			e.printStackTrace();
 		}
 	}
-	public String getGwamokName(int gwamokID) {
+	public  String getGwamokName(int gwamokID) {
 		for (Gwamok gwamok : this.gwamokVector) {
 			if (gwamok.getID() == gwamokID) {
 				

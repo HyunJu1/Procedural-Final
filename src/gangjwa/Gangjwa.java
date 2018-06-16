@@ -1,18 +1,23 @@
 package gangjwa;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import Haksaeng.HaksaengList;
 import main.GwamokList;
 
 public class Gangjwa {
+
 	GwamokList gwamokList1 = new GwamokList();
 	HaksaengList haksaengList;
-	public static int gwamokID;
-	public int gangjwaID;
+
+	public static int gangjwaID;
 	public String name;
 	public int year;
 	public int hakgi;
+	public static int gwamokID;
 
 	public void readFromFile(Scanner scanner) {
 		this.gwamokID = scanner.nextInt();
@@ -21,6 +26,7 @@ public class Gangjwa {
 		this.year = scanner.nextInt();
 		this.hakgi = scanner.nextInt();
 		this.gangjwaID = scanner.nextInt();
+
 
 	}
 
@@ -55,10 +61,8 @@ public class Gangjwa {
 
 	public void writeToFile() throws Exception {
 
-		System.out.print( this.gangjwaID + " / " + this.name + " / " + this.year + " / " + this.hakgi+" / ");
+		System.out.print(this.gangjwaID + " / " + this.name + " / " + this.year + " / " + this.hakgi + " / ");
 
 	}
-	
-
 
 }
