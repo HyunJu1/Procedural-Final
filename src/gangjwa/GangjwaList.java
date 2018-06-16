@@ -32,19 +32,19 @@ public class GangjwaList {
 
 		try {
 			scanner = new Scanner(file);
-		
+
 			int i = 0;
-		
+
 			while (scanner.hasNext()) {
 				String name = scanner.next();
 
 				file2 = new File(name);
 				scanner2 = new Scanner(file2);
-			
+
 				while (scanner2.hasNext()) {
 
-					if (i == 0 || i==10 || i==20 || i==30) {
-						
+					if (i == 0 || i == 10 || i == 20 || i == 30) {
+
 						// scanner2=new Scanner(name);
 						Gangjwa gangjwa = new Gangjwa();
 						gangjwa.associate(this.gwamokList, this.haksaengList);
@@ -78,7 +78,7 @@ public class GangjwaList {
 		String gwamokName1 = this.gwamokList.getGwamokName(Gangjwa.gwamokID);
 
 		if (gwamokName1 != null) {
-		
+
 			for (Gangjwa gangjwa : this.gangjwaVector) {
 				gangjwa.writeToFile();
 			}
@@ -113,7 +113,7 @@ public class GangjwaList {
 
 			this.haksaengID = scanner.nextInt();
 			this.kimal = scanner.nextInt();
-	
+
 		}
 
 		public void writeToFile() throws Exception {
@@ -123,7 +123,7 @@ public class GangjwaList {
 				grade = 'B';
 			} else if (kimal >= 50) {
 				grade = 'C';
-			} else if (kimal >=20) {
+			} else if (kimal >= 20) {
 				grade = 'D';
 			} else {
 				grade = 'F';
@@ -141,9 +141,9 @@ public class GangjwaList {
 	}
 
 	public Vector<Sungjeok> getSeongjeok(int id) {
-		Vector<Sungjeok> sungjeokList ;
-		for(Gangjwa ganjwa : this.gangjwaVector) {
-			
+		Vector<Sungjeok> sungjeokList;
+		for (Gangjwa ganjwa : this.gangjwaVector) {
+
 		}
 		return null;
 	}
